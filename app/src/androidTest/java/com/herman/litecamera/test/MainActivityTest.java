@@ -170,7 +170,7 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
             assertTrue( System.currentTimeMillis() - time_s < 20000 );
         }
         Log.d(TAG, "camera is open!");
-        this.getInstrumentation().waitForIdleSync(); // allow the onPostExecute of open camera task run
+        this.getInstrumentation().waitForIdleSync(); // allow the onPostExecute of Lite Camera task run
         Log.d(TAG, "done idle sync");
         try {
             Thread.sleep(100); // sleep a bit just to be safe
@@ -179,7 +179,7 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
         }
     }
 
-    /** Restarts Open Camera.
+    /** Restarts Lite Camera.
      *  WARNING: Make sure that any assigned variables related to the activity, e.g., anything
      *  returned by findViewById(), is updated to the new mActivity after calling this method!
      */
@@ -503,7 +503,7 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
         Log.d(TAG, "wait for idle sync");
         this.getInstrumentation().waitForIdleSync();
         Log.d(TAG, "done waiting for idle sync");
-        // waiting for camera to open can't be on the ui thread, as it's on the ui thread that Open Camera sets that we've opened the camera
+        // waiting for camera to open can't be on the ui thread, as it's on the ui thread that Lite Camera sets that we've opened the camera
         waitUntilCameraOpened();
         Log.d(TAG, "3 count_cameraStartPreview: " + mPreview.count_cameraStartPreview);
         assertEquals(2, mPreview.count_cameraStartPreview);
@@ -5120,7 +5120,7 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
         Log.d(TAG, "after idle sync");
         assertEquals(1, mPreview.count_cameraTakePicture);
 
-        // don't need to wait until image queue empty, as Open Camera shouldn't use background thread for preview pause option
+        // don't need to wait until image queue empty, as Lite Camera shouldn't use background thread for preview pause option
 
         Bitmap thumbnail = mActivity.gallery_bitmap;
         assertNotNull(thumbnail);
@@ -5278,7 +5278,7 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
         Log.d(TAG, "count_cameraTakePicture: " + mPreview.count_cameraTakePicture);
         assertEquals(1, mPreview.count_cameraTakePicture);
 
-        // don't need to wait until image queue empty, as Open Camera shouldn't use background thread for preview pause option
+        // don't need to wait until image queue empty, as Lite Camera shouldn't use background thread for preview pause option
 
         Bitmap thumbnail = mActivity.gallery_bitmap;
         assertNotNull(thumbnail);
@@ -7004,7 +7004,7 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
         subTestTakeVideo(false, true, false, false, null, 5000, false, 0);
     }
 
-    /** Tests starting and stopping video quickly, to simulate failing to create a video (but needs Open Camera to delete
+    /** Tests starting and stopping video quickly, to simulate failing to create a video (but needs Lite Camera to delete
      *  the corrupt resultant video).
      */
     public void testTakeVideoQuick() throws InterruptedException {
@@ -7014,7 +7014,7 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
 
         mPreview.test_runtime_on_video_stop = true; // as RuntimeException on short delay doesn't seem to occur on Galaxy S10e at least, for 500ms delay
 
-        // still need a short delay (at least 500ms, otherwise Open Camera will ignore the repeated stop)
+        // still need a short delay (at least 500ms, otherwise Lite Camera will ignore the repeated stop)
         subTestTakeVideo(false, false, false, false, null, 500, false, 0);
     }
 
@@ -7037,7 +7037,7 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
 
         mPreview.test_runtime_on_video_stop = true; // as RuntimeException on short delay doesn't seem to occur on Galaxy S10e at least, for 500ms delay
 
-        // still need a short delay (at least 500ms, otherwise Open Camera will ignore the repeated stop)
+        // still need a short delay (at least 500ms, otherwise Lite Camera will ignore the repeated stop)
         subTestTakeVideo(false, false, false, false, null, 500, false, 0);
     }
 
@@ -9806,7 +9806,7 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
 
         pauseAndResume();
         Log.d(TAG, "after pause and resume: compare actual zoom " + mPreview.getCameraController().getZoom() + " to zoom " + max_zoom);
-        // as of Open Camera v1.43, zoom is reset when pause/resuming
+        // as of Lite Camera v1.43, zoom is reset when pause/resuming
         //assertTrue(mPreview.getCameraController().getZoom() == max_zoom);
         assertEquals(mPreview.getCameraController().getZoom(), init_zoom);
         assertEquals(max_zoom - zoomSeekBar.getProgress(), mPreview.getCameraController().getZoom());
@@ -9843,7 +9843,7 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
 
         max_zoom = mPreview.getMaxZoom();
         Log.d(TAG, "after pause and resume: compare actual zoom " + mPreview.getCameraController().getZoom() + " to zoom " + max_zoom);
-        // as of Open Camera v1.43, zoom is reset when pause/resuming
+        // as of Lite Camera v1.43, zoom is reset when pause/resuming
         //assertTrue(mPreview.getCameraController().getZoom() == max_zoom);
         assertEquals(mPreview.getCameraController().getZoom(), init_zoom);
         assertEquals(max_zoom - zoomSeekBar.getProgress(), mPreview.getCameraController().getZoom());
@@ -10617,7 +10617,7 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
 
     }
 
-    /* Test for failing to open camera.
+    /* Test for failing to Lite Camera.
      */
     public void testFailOpenCamera() throws InterruptedException {
         Log.d(TAG, "testFailOpenCamera");
@@ -12058,8 +12058,8 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
      *  To use these tests, the testdata/ subfolder should be manually copied to the test device in the DCIM/testOpenCamera/
      *  folder (so you have DCIM/testOpenCamera/testdata/). We don't use assets/ as we'd end up with huge APK sizes which takes
      *  time to transfer to the device everytime we run the tests.
-     * @param iso The ISO of the middle image (for testing Open Camera's "smart" contrast enhancement). If set to -1, then use "always" contrast enhancement.
-     * @param exposure_time The exposure time of the middle image (for testing Open Camera's "smart" contrast enhancement)
+     * @param iso The ISO of the middle image (for testing Lite Camera's "smart" contrast enhancement). If set to -1, then use "always" contrast enhancement.
+     * @param exposure_time The exposure time of the middle image (for testing Lite Camera's "smart" contrast enhancement)
      */
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     private HistogramDetails subTestHDR(List<Bitmap> inputs, String output_name, boolean test_dro, int iso, long exposure_time, HDRProcessor.TonemappingAlgorithm tonemapping_algorithm) throws IOException, InterruptedException {

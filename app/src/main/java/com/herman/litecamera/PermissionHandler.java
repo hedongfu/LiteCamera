@@ -212,7 +212,7 @@ public class PermissionHandler {
                         Log.d(TAG, "camera permission denied");
                     // permission denied, boo! Disable the
                     // functionality that depends on this permission.
-                    // Open Camera doesn't need to do anything: the camera will remain closed
+                    // Lite Camera doesn't need to do anything: the camera will remain closed
                 }
                 return;
             }
@@ -232,7 +232,7 @@ public class PermissionHandler {
                         Log.d(TAG, "storage permission denied");
                     // permission denied, boo! Disable the
                     // functionality that depends on this permission.
-                    // Open Camera doesn't need to do anything: the camera will remain closed
+                    // Lite Camera doesn't need to do anything: the camera will remain closed
                 }
                 return;
             }

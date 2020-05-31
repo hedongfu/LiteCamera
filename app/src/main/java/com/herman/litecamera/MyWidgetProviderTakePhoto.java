@@ -8,7 +8,7 @@ import android.content.Intent;
 import android.util.Log;
 import android.widget.RemoteViews;
 
-/** Handles the Open Camera "take photo" widget. This widget launches Open
+/** Handles the Lite Camera "take photo" widget. This widget launches Open
  *  Camera, and immediately takes a photo.
  */
 public class MyWidgetProviderTakePhoto extends AppWidgetProvider {

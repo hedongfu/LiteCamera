@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<title>Open Camera History
+<title>Lite Camera History
 </title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <!-- viewport recommended by Google for mobile design, also required for Google's mobile-friendly test at https://www.google.co.uk/webmasters/tools/mobile-friendly/ -->
@@ -40,9 +40,9 @@
 
 <body>
 
-<a href="index.html"><img align="left" src="ic_launcher.png" alt="Open Camera icon" title="Open Camera icon" width="72" height="72"></a>
+<a href="index.html"><img align="left" src="ic_launcher.png" alt="Lite Camera icon" title="Lite Camera icon" width="72" height="72"></a>
 <hr>
-<center><h2>Open Camera History</h2></center>
+<center><h2>Lite Camera History</h2></center>
 <hr>
 
 <p>&lt; <small><a href="index.html">Main Page.</a></small></p>
@@ -51,7 +51,7 @@
 Version 1.48.1 (2020/05/02)
 
 FIXED   Crash on devices with Camera2 API where camera reports no picture, video or preview
-        resolutions, instead fail to open camera gracefully instead.
+        resolutions, instead fail to Lite Camera gracefully instead.
 FIXED   Fix switch camera buttons behaviour if a camera with ID greater than 0 failed to open.
 FIXED   Some devices lost custom video profiles in 1.48.
 ADDED   If camera fails to open, display ID of current camera that we tried to open.
@@ -170,16 +170,16 @@ FIXED   Disallow switching between auto and manual mode while recording video (t
         crashed).
 FIXED   Crashes related to histogram, zebra stripes, focus peaking - don't crash if we have
         problems.
-FIXED   Don't close Open Camera if bluetooth service (for remote control) fails to initialise.
+FIXED   Don't close Lite Camera if bluetooth service (for remote control) fails to initialise.
 FIXED   Crash related to focus assist if camera closed.
-FIXED   Crashes related to multiple instances of Open Camera and Renderscript.releaseAllContexts().
+FIXED   Crashes related to multiple instances of Lite Camera and Renderscript.releaseAllContexts().
 FIXED   Some devices (e.g., LG G6) defaulted to front camera, hopefully fixed to default to back
         camera on all devices that have a back camera.
 ADDED   New panorama photo mode (requires Android 5+, note not all devices are supported).
 ADDED   New option Settings/Photo settings/Text style/"Text with shaded background" for photo stamp
         option, to draw with a rectangular shaded background (i.e., bringing back the old behaviour
         that was replaced by the newer outline shadow text).
-UPDATED Notifications now displayed on Android 8+ when Open Camera is in background when images are
+UPDATED Notifications now displayed on Android 8+ when Lite Camera is in background when images are
         still being processed/saved.
 UPDATED Improved exposure panel UI, and made on-screen text (zoom, video timer etc) more compact.
 UPDATED Camera ID is now displayed when switching cameras, on devices with more than two cameras.
@@ -270,7 +270,7 @@ Version 1.45 (2019/01/14)
 FIXED   Crash if going to background during focus bracketing.
 FIXED   Crash for Camera2 API on devices with no color effects.
 FIXED   Crashes related to saving with storage access framework.
-FIXED   If Open Camera is running above screen lock, don't require screen to be unlocked just to
+FIXED   If Lite Camera is running above screen lock, don't require screen to be unlocked just to
         show an info dialog.
 FIXED   Prevent exposure panel from overlapping with on-screen icons on small devices.
 FIXED   Problems with popup view and left handed UI (e.g., wouldn't show when first opened).
@@ -420,7 +420,7 @@ UPDATED Battery optimisation: don't use magnetic compass sensor unless required 
 UPDATED Camera opening on background thread (for smoother operation) now enabled for Android 6
         devices (was already supported for Android 7+).
 UPDATED Workaround for bug where popup menu appears too large (off-screen), reopening the popup at
-        least should fix this without having to restart Open Camera.
+        least should fix this without having to restart Lite Camera.
 
 Version 1.43.3 (2018/04/20)
 
@@ -696,7 +696,7 @@ FIXED   Make line-spacing for toasts more consistent.
 FIXED   Improved "Max duration of video", was stopping up to a second
         prematurely.
 ADDED   New photo mode "DRO" (dynamic range optimisation) (requires Android 5).
-ADDED   Quick settings tiles to open camera (requires Android 7): tiles for
+ADDED   Quick settings tiles to Lite Camera (requires Android 7): tiles for
         photo, video and selfie mode.
 ADDED   Pause/resume video recording (requires Android 7).
 ADDED   New option to mirror photos for front camera (Settings/Photo settings/
@@ -742,7 +742,7 @@ UPDATED Improvements to HDR algorithm: improved tonemapping; local contrast
         enhancement.
 UPDATED Improved performance of on-screen toasts, gives smoother update for
         seekbars (e.g., manual focus, exposure).
-UPDATED Launching Open Camera always opens in camera mode (rather than gallery,
+UPDATED Launching Lite Camera always opens in camera mode (rather than gallery,
         if the user had previously gone to the gallery).
 UPDATED Improved look of seekbars, particularly for exposure.
 UPDATED Folder chooser now contains entry to jump to DCIM folder.
@@ -775,7 +775,7 @@ ADDED   Screen flash to simulate flash auto/on modes for front cameras without
         flash ("auto" requires Camera2).
 ADDED   Material design icons for Settings.
 UPDATED Now supporting Android 6 permissions. You'll have to "allow"
-        permissions for camera and storage for Open Camera to work. Additional
+        permissions for camera and storage for Lite Camera to work. Additional
         permissions requested when required are microphone (for video) and
         location (for geotagging).
 UPDATED HDR mode now supports flash modes.
@@ -853,7 +853,7 @@ UPDATED Allow one more photo to be processed in background at a time.
 UPDATED Improved timing of shutter sound for Camera2 API.
 UPDATED Enabling auto-stabilise now shows an info dialog. Select "Don't show
         again" to prevent the dialog from showing again.
-UPDATED Thumbnail for most recent photo/video now restricted to Open Camera's
+UPDATED Thumbnail for most recent photo/video now restricted to Lite Camera's
         save folder when using Storage Access Framework (this was aready the
         case when not using Storage Access Framework).
 UPDATED 5s and 10s options for maximum video duration.
@@ -1018,13 +1018,13 @@ FIXED   Taking photo would sometimes hang if flash on, and taking a photo
         whilst already focusing.
 FIXED   "Show thumbnail animation" preference was ignored since v1.24.
 FIXED   Saving of Exif tags (including GPS compass direction) now handled
-        properly when Open Camera is called via another app to take a photo
+        properly when Lite Camera is called via another app to take a photo
         (note that some 3rd party apps may still override the Exif tags).
 FIXED   Was sometimes displaying "0" for timer countdown and playing a beep
         when taking a photo on timer.
 FIXED   If a photo was taken before startup autofocus completed, flash was
         incorrectly turned off.
-FIXED   If torch is on, don't turn it off and on when Open Camera is starting
+FIXED   If torch is on, don't turn it off and on when Lite Camera is starting
         up.
 FIXED   Now switches to photo mode automatically when called from a photo
         intent (ACTION_IMAGE_CAPTURE, ACTION_IMAGE_CAPTURE_SECURE,
@@ -1047,7 +1047,7 @@ ADDED   Option for highlight color to use for angle display and level line,
         when camera is nearly level.
 ADDED   Option for mono or stereo audio when recording video (stereo only
         supported on some devices).
-ADDED   Support for INTENT_ACTION_VIDEO_CAMERA intent (so Open Camera can now
+ADDED   Support for INTENT_ACTION_VIDEO_CAMERA intent (so Lite Camera can now
         be launched in video using OK Google's "record a video") and
         ACTION_VIDEO_CAPTURE.
 ADDED   Support for ACTION_IMAGE_CAPTURE_SECURE intent.
@@ -1128,7 +1128,7 @@ FIXED   Fix for devices where there is no write access for DCIM (thanks to
 FIXED   Wasn't displaying free memory when first run, if OpenCamera folder
         didn't already exist.
 FIXED   If GPS lost, old possibly out of date position was still being used.
-FIXED   Gallery now shows/goes to latest image/video in the chosen Open Camera
+FIXED   Gallery now shows/goes to latest image/video in the chosen Lite Camera
         save folder, rather than the latest image/video on the device. Also
         fixed problem if there existed a file with a datestamp in the future -
         these are no longer shown, even if located in the save folder.
@@ -1173,7 +1173,7 @@ UPDATED Popup menu photo resolution switcher now displays megapixels of each
         resolution.
 UPDATED Switching resolutions from popup menup is now smoother.
 UPDATED Removed android.hardware.camera.autofocus as being a required feature
-        (this meant Open Camera didn't show up in Google Play on devices
+        (this meant Lite Camera didn't show up in Google Play on devices
         without auto-focus camera).
 
 Version 1.22 (2015/01/04)
@@ -1225,8 +1225,8 @@ FIXED   If called via an intent, and returning the bitmap via a parcel, the
 ADDED   Option to stamp photos with date and time; and also GPS if location
         data is enabled.
 ADDED   New application shortcut "Take Photo", which automatically takes a
-        photo after opening Open Camera.
-ADDED   Lock screen widgets, to allow calling Open Camera from the lock screen,
+        photo after opening Lite Camera.
+ADDED   Lock screen widgets, to allow calling Lite Camera from the lock screen,
         and taking a photo from the lock screen (requires Android 4.2).
 UPDATED Popup menu button now shows flash indicator (for flash auto or on).
 UPDATED Cleaned up settings - removed some options that are more easily
@@ -1252,7 +1252,7 @@ FIXED   Focus rectangle was shown after switching from video to photo, and
         wouldn't disappear until a focus occurred.
 FIXED   Accents for Spanish translation.
 ADDED   New option to display crop guides.
-ADDED   Option to rotate preview 180 degrees (useful if using Open Camera with
+ADDED   Option to rotate preview 180 degrees (useful if using Lite Camera with
         adapters that invert the image).
 UPDATED Material Design icons and colours.
 UPDATED Improved look of toasts to match Android 4.4 look.
@@ -1331,7 +1331,7 @@ FIXED   More crashes due to camera drivers that aren't following Android API
         specs (Parameters.getFocusMode() should always be non-null, but isn't
         on some devices!)
 FIXED   If video failed due to error (e.g., hitting device max filesize,
-        running out of space, of other errors), Open Camera now stops properly
+        running out of space, of other errors), Lite Camera now stops properly
         rather than thinking the video is still recording. Last video error is
         also stored in the about/debug window.
 ADDED   New option to lock orientation to portrait or landscape.
@@ -1346,11 +1346,11 @@ FIXED   Problem with face detection not resuming after focusing on mtk6589.
 FIXED   Workaround for aspect ratio bug introduced in Android 4.4.3:
         http://code.google.com/p/android/issues/detail?id=70830
         Problem that this caused with aspect ratio with video recording.
-FIXED   Open Camera now available as a choice when camera icon pressed from
-        Gallery app (Open Camera now responds to
+FIXED   Lite Camera now available as a choice when camera icon pressed from
+        Gallery app (Lite Camera now responds to
         android.media.action.STILL_IMAGE_CAMERA).
-FIXED   Open Camera now available as a choice when camera icon pressed from
-        Cover Lock Screen (beta) app (Open Camera now responds to
+FIXED   Lite Camera now available as a choice when camera icon pressed from
+        Cover Lock Screen (beta) app (Lite Camera now responds to
         android.media.action.STILL_IMAGE_CAMERA_SECURE).
 FIXED   All available video resolutions are now supported.
 ADDED   New "manual" focus mode - focusing happens when you touch the screen,
@@ -1370,7 +1370,7 @@ ADDED   Option to limit duration of recording video (automatically stops after
         times.
 UPDATED Significantly improved speed for opening and closing settings (now
         launched as a Fragment rather than a separate Activity).
-UPDATED Open Camera now remains active rather than being blocked by a "screen
+UPDATED Lite Camera now remains active rather than being blocked by a "screen
         lock" (face/PIN unlock still required to go to Gallery or Settings).
         This behaviour can be switched off by going to Settings/More Camera
         Controls/Show camera when locked.
@@ -1529,7 +1529,7 @@ Version 1.5 (2014/01/09)
 FIXED   Crash on Android 4.4 when launching for first time, or changing the
         save folder (issue with creating the save folder, due to Android no
         longer allowing ANDROID_MEDIA_MOUNTED to be broadcast).
-FIXED   Crash if failed to open camera after switching cameras, then user tried
+FIXED   Crash if failed to Lite Camera after switching cameras, then user tried
         to zoom.
 FIXED   Other potential crashes (NumberFormatException on "es209ra" on startup;
         RuntimeException on Xperia Go when taking photo; RuntimeException on
@@ -1549,7 +1549,7 @@ FIXED   Crash when rotating device when viewing "Photo and video settings".
 FIXED   If device was rotated when app was idle, the UI sometimes showed with
         the incorrect orientation.
 ADDED   Images now tagged with current location (optional, off by default). Note
-        that Open Camera now requires Location permission, for this feature.
+        that Lite Camera now requires Location permission, for this feature.
 ADDED   Option for face detection.
 ADDED   Touch to select focus area also now sets the metering area (used to
         determine exposure).
@@ -1586,7 +1586,7 @@ FIXED   Focus area wasn't getting reset when it should (e.g., changing focus
 FIXED   Fixed potential crash on auto focus.
 FIXED   Hide GUI options while taking a photo (otherwise problems can be caused
         by changing options, e.g., changing focus mode).
-FIXED   Message for failing to open camera was too wide for portrait view.
+FIXED   Message for failing to Lite Camera was too wide for portrait view.
 ADDED   Option for exposure compensation.
 ADDED   Show whether auto focus was successful or not (via red/green rectangle)
         even if focus area not selected.
@@ -1607,9 +1607,9 @@ First release.
 </pre>
 
 <hr>
-<p><a href="privacy_oc.html">Open Camera Privacy Policy.</a></p>
+<p><a href="privacy_oc.html">Lite Camera Privacy Policy.</a></p>
 <p>This website uses icons from third party sources, see <a href="index.html#licence">licences.</a></p>
-<p><a href="http://sourceforge.net/p/opencamera/">Open Camera on Sourceforge.</a></p>
+<p><a href="http://sourceforge.net/p/opencamera/">Lite Camera on Sourceforge.</a></p>
 <hr>
 
 </body>

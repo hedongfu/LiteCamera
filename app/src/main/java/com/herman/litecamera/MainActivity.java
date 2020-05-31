@@ -87,7 +87,7 @@ import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.ZoomControls;
 
-/** The main Activity for Open Camera.
+/** The main Activity for Lite Camera.
  */
 public class MainActivity extends Activity {
     private static final String TAG = "MainActivity";
@@ -122,7 +122,7 @@ public class MainActivity extends Activity {
     private boolean saf_dialog_from_preferences; // if a SAF dialog is opened, this records whether we opened it from the Preferences
     private boolean camera_in_background; // whether the camera is covered by a fragment/dialog (such as settings or folder picker)
     private GestureDetector gestureDetector;
-    private boolean screen_is_locked; // whether screen is "locked" - this is Open Camera's own lock to guard against accidental presses, not the standard Android lock
+    private boolean screen_is_locked; // whether screen is "locked" - this is Lite Camera's own lock to guard against accidental presses, not the standard Android lock
     private final Map<Integer, Bitmap> preloaded_bitmap_resources = new Hashtable<>();
     private ValueAnimator gallery_save_anim;
     private boolean last_continuous_fast_burst; // whether the last photo operation was a continuous_fast_burst
@@ -620,7 +620,7 @@ public class MainActivity extends Activity {
                 }
                 // We set the latest_version whether or not the dialog is shown - if we showed the first time dialog, we don't
                 // want to then show the What's New dialog next time we run! Similarly if the user had disabled showing the dialog,
-                // but then enables it, we still shouldn't show the dialog until the new time Open Camera upgrades.
+                // but then enables it, we still shouldn't show the dialog until the new time Lite Camera upgrades.
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putInt(PreferenceKeys.LatestVersionPreferenceKey, version_code);
                 editor.apply();
@@ -661,7 +661,7 @@ public class MainActivity extends Activity {
 
         // create notification channel - only needed on Android 8+
         if( Build.VERSION.SDK_INT >= Build.VERSION_CODES.O ) {
-            CharSequence name = "Open Camera Image Saving";
+            CharSequence name = "Lite Camera Image Saving";
             String description = "Notification channel for processing and saving images in the background";
             int importance = NotificationManager.IMPORTANCE_LOW;
             NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
@@ -743,7 +743,7 @@ public class MainActivity extends Activity {
     }
 
     /* This method sets the preference defaults which are set specific for a particular device.
-     * This method should be called when Open Camera is run for the very first time after installation,
+     * This method should be called when Lite Camera is run for the very first time after installation,
      * or when the user has requested to "Reset settings".
      */
     void setDeviceDefaults() {
@@ -815,28 +815,28 @@ public class MainActivity extends Activity {
         }
         else if( (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N && MyTileService.TILE_ID.equals(action)) || ACTION_SHORTCUT_CAMERA.equals(action) ) {
             if( MyDebug.LOG )
-                Log.d(TAG, "launching from quick settings tile or application shortcut for Open Camera: photo mode");
+                Log.d(TAG, "launching from quick settings tile or application shortcut for Lite Camera: photo mode");
             applicationInterface.setVideoPref(false);
         }
         else if( (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N && MyTileServiceVideo.TILE_ID.equals(action)) || ACTION_SHORTCUT_VIDEO.equals(action) ) {
             if( MyDebug.LOG )
-                Log.d(TAG, "launching from quick settings tile or application shortcut for Open Camera: video mode");
+                Log.d(TAG, "launching from quick settings tile or application shortcut for Lite Camera: video mode");
             applicationInterface.setVideoPref(true);
         }
         else if( (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N && MyTileServiceFrontCamera.TILE_ID.equals(action)) || ACTION_SHORTCUT_SELFIE.equals(action) ) {
             if( MyDebug.LOG )
-                Log.d(TAG, "launching from quick settings tile or application shortcut for Open Camera: selfie mode");
+                Log.d(TAG, "launching from quick settings tile or application shortcut for Lite Camera: selfie mode");
             done_facing = true;
             applicationInterface.switchToCamera(true);
         }
         else if( ACTION_SHORTCUT_GALLERY.equals(action) ) {
             if( MyDebug.LOG )
-                Log.d(TAG, "launching from application shortcut for Open Camera: gallery");
+                Log.d(TAG, "launching from application shortcut for Lite Camera: gallery");
             openGallery();
         }
         else if( ACTION_SHORTCUT_SETTINGS.equals(action) ) {
             if( MyDebug.LOG )
-                Log.d(TAG, "launching from application shortcut for Open Camera: settings");
+                Log.d(TAG, "launching from application shortcut for Lite Camera: settings");
             openSettings();
         }
 
@@ -1185,7 +1185,7 @@ public class MainActivity extends Activity {
     };
 
     /* To support https://play.google.com/store/apps/details?id=com.miband2.mibandselfie .
-     * Allows using the Mi Band 2 as a Bluetooth remote for Open Camera to take photos or start/stop
+     * Allows using the Mi Band 2 as a Bluetooth remote for Lite Camera to take photos or start/stop
      * videos.
      */
     private final BroadcastReceiver cameraReceiver = new BroadcastReceiver() {
@@ -2794,7 +2794,7 @@ public class MainActivity extends Activity {
             // We put this here instead of onConfigurationChanged() as onConfigurationChanged() isn't called when switching from
             // reverse landscape to landscape orientation: so it's needed to fix if the user starts in portrait, goes to settings
             // or a dialog, then switches to reverse landscape, then exits settings/dialog - the system orientation will switch
-            // to landscape (which Open Camera is forced to).
+            // to landscape (which Lite Camera is forced to).
             mainUI.layoutUI();
         }
 
@@ -2813,7 +2813,7 @@ public class MainActivity extends Activity {
         if( sharedPreferences.getBoolean(PreferenceKeys.ShowWhenLockedPreferenceKey, true) ) {
             if( MyDebug.LOG )
                 Log.d(TAG, "do show when locked");
-            // keep Open Camera on top of screen-lock (will still need to unlock when going to gallery or settings)
+            // keep Lite Camera on top of screen-lock (will still need to unlock when going to gallery or settings)
             showWhenLocked(true);
         }
         else {
@@ -3272,7 +3272,7 @@ public class MainActivity extends Activity {
             if( !is_raw ) {
                 // REVIEW_ACTION means we can view video files without autoplaying
                 // however, Google Photos at least has problems with going to a RAW photo (in RAW only mode),
-                // unless we first pause and resume Open Camera
+                // unless we first pause and resume Lite Camera
                 if( MyDebug.LOG )
                     Log.d(TAG, "try REVIEW_ACTION");
                 try {
@@ -3585,7 +3585,7 @@ public class MainActivity extends Activity {
         }
     }
 
-    /** Opens Open Camera's own (non-Storage Access Framework) dialog to select a folder.
+    /** Opens Lite Camera's own (non-Storage Access Framework) dialog to select a folder.
      */
     private void openFolderChooserDialog() {
         if( MyDebug.LOG )
@@ -3843,7 +3843,7 @@ public class MainActivity extends Activity {
         this.preview.takePicturePressed(photo_snapshot, continuous_fast_burst);
     }
 
-    /** Lock the screen - this is Open Camera's own lock to guard against accidental presses,
+    /** Lock the screen - this is Lite Camera's own lock to guard against accidental presses,
      *  not the standard Android lock.
      */
     void lockScreen() {

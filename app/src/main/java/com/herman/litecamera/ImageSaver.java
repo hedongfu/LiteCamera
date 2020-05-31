@@ -1495,7 +1495,7 @@ public class ImageSaver extends Thread {
             long time_s = System.currentTimeMillis();
             if( request.jpeg_images.size() > 1 ) {
                 // if there's only 1 image, we're in DRO mode, and shouldn't save the base image
-                // note that in earlier Open Camera versions, we used "_EXP" as the suffix. We now use just "_" from 1.42 onwards, so Google
+                // note that in earlier Lite Camera versions, we used "_EXP" as the suffix. We now use just "_" from 1.42 onwards, so Google
                 // Photos will group them together. (Unfortunately using "_EXP_" doesn't work, the images aren't grouped!)
                 saveBaseImages(request, "_");
                 if( MyDebug.LOG ) {
@@ -3508,7 +3508,7 @@ public class ImageSaver extends Thread {
         // Hack: Problem on Camera2 API (at least on Nexus 6) that if geotagging is enabled, then the resultant image has incorrect Exif TAG_GPS_DATESTAMP and TAG_GPS_TIMESTAMP (GPSDateStamp) set (date tends to be around 2038 - possibly a driver bug of casting long to int?).
         // This causes problems when viewing with Gallery apps (e.g., Gallery ICS; Google Photos seems fine however), as they show this incorrect date.
         // Update: Before v1.34 this was "fixed" by calling: exif.setAttribute(ExifInterface.TAG_GPS_TIMESTAMP, Long.toString(System.currentTimeMillis()));
-        // However this stopped working on or before 20161006. This wasn't a change in Open Camera (whilst this was working fine in
+        // However this stopped working on or before 20161006. This wasn't a change in Lite Camera (whilst this was working fine in
         // 1.33 when I released it, the bug had come back when I retested that version) and I'm not sure how this ever worked, since
         // TAG_GPS_TIMESTAMP is meant to be a string such "21:45:23", and not the number of ms since 1970 - possibly it wasn't really
         // working , and was simply invalidating it such that Gallery then fell back to looking elsewhere for the datetime?

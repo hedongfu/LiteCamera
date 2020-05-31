@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Open Camera</string>
+    <string name="app_name">Lite Camera</string>
     <string name="action_settings">Beállítások</string>
     <string name="action_popup">Felugró beállítások</string>
     <string name="intro_ok">OK (Ez az üzenet nem jelenik meg újra)</string>
@@ -119,9 +119,9 @@
     <string name="preference_save_video_prefix_summary">A videók mentésekor használt fájlnév előtag</string>
     <string name="preference_save_zulu_time">Fájlnév időformátum</string>
     <string name="preference_show_when_locked">Kamera megjelenítése zárolt állapotban</string>
-    <string name="preference_show_when_locked_summary">Ha engedélyezve van, az Open Camera látható marad a zárképernyő alatt is (de fel kell oldanod a beállítások, geléria, stb. eléréséhez)</string>
+    <string name="preference_show_when_locked_summary">Ha engedélyezve van, az Lite Camera látható marad a zárképernyő alatt is (de fel kell oldanod a beállítások, geléria, stb. eléréséhez)</string>
     <string name="preference_startup_focus">Autofókusz indításkor</string>
-    <string name="preference_startup_focus_summary">Automatikus fókuszálás, amikor az Open Camera elindul. Ha gondok vannak az induláskor bekapcsoló vakuval, tiltsd ezt le</string>
+    <string name="preference_startup_focus_summary">Automatikus fókuszálás, amikor az Lite Camera elindul. Ha gondok vannak az induláskor bekapcsoló vakuval, tiltsd ezt le</string>
     <string name="preference_lock_video">Képernyő zárolása videofelvétel alatt</string>
     <string name="preference_lock_video_summary">Videó készítése alatt a felhasználói felület zárolva lesz, megakadályozva a felvétel véletlen leállítását. Feloldáshoz csúsztad az ujjad a képernyőn. Megjegyzendő, hogy a felvétel le fog állni, ha az alkalmazás háttérbe kerül vagy a képernyő kikapcsol.</string>
     <string name="preference_rotate_preview">Előnézet forgatása</string>
@@ -163,7 +163,7 @@
     <string name="preference_take_photo_border">Keret megjelenítése exponáláskor</string>
     <string name="preference_take_photo_border_summary">Keret megjelenítése a kijelzőn, jelezve hogy fotó készül</string>
     <string name="preference_keep_display_on">Kijelző bekapcsolva tartása</string>
-    <string name="preference_keep_display_on_summary">Ha engedélyezve van, akkor a képernyő nem kapcsol ki, míg az Open Camera főképernyője aktív</string>
+    <string name="preference_keep_display_on_summary">Ha engedélyezve van, akkor a képernyő nem kapcsol ki, míg az Lite Camera főképernyője aktív</string>
     <string name="preference_max_brightness">Maximális fényerő kényszerítése</string>
     <string name="preference_max_brightness_summary">A kijelző mindenképpen maximális fényerővel üzemel, az eszköz alapértelmezése helyett</string>
     
@@ -224,7 +224,7 @@
     
     <string name="preference_category_online">Egyéb</string>
     <string name="preference_online_help">Online súgó</string>
-    <string name="preference_online_help_summary">Open Camera weboldal megnyitása böngészőben</string>
+    <string name="preference_online_help_summary">Lite Camera weboldal megnyitása böngészőben</string>
     <string name="preference_donate">Támogasd a fejlesztést adománnyal</string>
     <string name="preference_donate_summary">A tetszik az alkalmazás, fontold meg adomány küldését a fejlesztés támogatására. Ezt a „támogatói alkalmazás” megvásárlásával teheted meg – kattints ide, hogy megnyisd a támogató alkalmazás oldalát. Köszönjük!</string>
     <string name="preference_use_camera2">Camera2 API használata</string>
@@ -232,8 +232,8 @@
     <string name="preference_about">Névjegy</string>
     <string name="preference_about_summary">App és hibakeresési információk</string>
     <string name="preference_reset">Beállítások visszaállítása</string>
-    <string name="preference_reset_summary">Az Open Camera összes beállítását alaphelyzetbe állítja</string>
-    <string name="preference_reset_question">Biztosan vissza szeretnéd állítani az Open Camera összes beállítását az alapértelmezettre?</string>
+    <string name="preference_reset_summary">Az Lite Camera összes beállítását alaphelyzetbe állítja</string>
+    <string name="preference_reset_question">Biztosan vissza szeretnéd állítani az Lite Camera összes beállítását az alapértelmezettre?</string>
 
     <string name="about_available">Elérhető</string>
     <string name="about_not_available">Nem elérhető</string>
@@ -508,4 +508,6 @@
     <string name="preference_immersive_mode_navigation">Csak a virtuális navigációs gombok elrejtése</string>
     <string name="preference_immersive_mode_gui">Kezelőfelület elrejtése</string>
     <string name="preference_immersive_mode_everything">Minden elrejtése</string>
+
+    <string name="preference_gallery">Képtár</string>
 </resources>

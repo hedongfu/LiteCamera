@@ -419,7 +419,7 @@ public class StorageUtils {
             if( !is_folder ) {
                 final String id = DocumentsContract.getDocumentId(uri);
                 if( id.startsWith("raw:") ) {
-                    // unclear if this is needed for Open Camera, but on Vibrance HDR
+                    // unclear if this is needed for Lite Camera, but on Vibrance HDR
                     // on some devices (at least on a Chromebook), I've had reports of id being of the form
                     // "raw:/storage/emulated/0/Download/..."
                     String filename = id.replaceFirst("raw:", "");
@@ -841,7 +841,7 @@ public class StorageUtils {
                 // now sorted in order of date - so just pick the most recent one
 
                 /*
-                // now sorted in order of date - scan to most recent one in the Open Camera save folder
+                // now sorted in order of date - scan to most recent one in the Lite Camera save folder
                 boolean found = false;
                 //File save_folder = getImageFolder(); // may be null if using SAF
                 String save_folder_string = save_folder == null ? null : save_folder.getAbsolutePath() + File.separator;
@@ -854,7 +854,7 @@ public class StorageUtils {
                     // path may be null on Android 4.4!: http://stackoverflow.com/questions/3401579/get-filename-and-path-from-uri-from-mediastore
                     if( save_folder_string == null || (path != null && path.contains(save_folder_string) ) ) {
                         if( MyDebug.LOG )
-                            Log.d(TAG, "found most recent in Open Camera folder");
+                            Log.d(TAG, "found most recent in Lite Camera folder");
                         // we filter files with dates in future, in case there exists an image in the folder with incorrect datestamp set to the future
                         // we allow up to 2 days in future, to avoid risk of issues to do with timezone etc
                         long date = cursor.getLong(column_date_taken_c);
@@ -873,7 +873,7 @@ public class StorageUtils {
 
                 if( !found ) {
                     if( MyDebug.LOG )
-                        Log.d(TAG, "can't find suitable in Open Camera folder, so just go with most recent");
+                        Log.d(TAG, "can't find suitable in Lite Camera folder, so just go with most recent");
                     cursor.moveToFirst();
                 }
                 */

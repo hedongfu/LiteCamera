@@ -63,7 +63,7 @@ public class CameraController1 extends CameraController {
         }
         catch(RuntimeException e) {
             if( MyDebug.LOG )
-                Log.e(TAG, "failed to open camera");
+                Log.e(TAG, "failed to Lite Camera");
             e.printStackTrace();
             throw new CameraControllerException();
         }
@@ -304,7 +304,7 @@ public class CameraController1 extends CameraController {
             }
             catch(NumberFormatException e) {
                 // crash java.lang.NumberFormatException: Invalid int: " 500" reported in v1.4 on device "es209ra", Android 4.1, 3 Jan 2014
-                // this is from java.lang.Integer.invalidInt(Integer.java:138) - unclear if this is a bug in Open Camera, all we can do for now is catch it
+                // this is from java.lang.Integer.invalidInt(Integer.java:138) - unclear if this is a bug in Lite Camera, all we can do for now is catch it
                 if( MyDebug.LOG )
                     Log.e(TAG, "NumberFormatException in getZoomRatios()");
                 e.printStackTrace();

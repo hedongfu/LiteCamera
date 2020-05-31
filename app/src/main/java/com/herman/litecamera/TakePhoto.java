@@ -13,7 +13,7 @@ public class TakePhoto extends Activity {
     private static final String TAG = "TakePhoto";
 
     // Usually passing data via intent is preferred to using statics - however here a static is better for security,
-    // as we don't want other applications calling Open Camera's MainActivity with a take photo intent!
+    // as we don't want other applications calling Lite Camera's MainActivity with a take photo intent!
     //public static final String TAKE_PHOTO = "com.herman.litecamera.TAKE_PHOTO";
     public static boolean TAKE_PHOTO;
 

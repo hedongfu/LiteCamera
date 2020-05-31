@@ -99,7 +99,7 @@ import android.widget.Toast;
  *  but in practice it's grown to more than this, and includes most of the
  *  operation of the camera. It exists at a higher level than CameraController
  *  (i.e., this isn't merely a low level wrapper to the camera API, but
- *  supports much of the Open Camera logic and functionality). Communication to
+ *  supports much of the Lite Camera logic and functionality). Communication to
  *  the rest of the application is available through ApplicationInterface.
  *  We could probably do with decoupling this class into separate components!
  */
@@ -261,7 +261,7 @@ public class Preview implements SurfaceHolder.Callback, TextureView.SurfaceTextu
     private List<String> white_balances;
     private List<String> antibanding;
     private List<String> edge_modes;
-    private List<String> noise_reduction_modes; // n.b., this is for the Camera2 API setting, not for Open Camera's Noise Reduction photo mode
+    private List<String> noise_reduction_modes; // n.b., this is for the Camera2 API setting, not for Lite Camera's Noise Reduction photo mode
     private List<String> isos;
     private boolean supports_white_balance_temperature;
     private int min_temperature;
@@ -866,7 +866,7 @@ public class Preview implements SurfaceHolder.Callback, TextureView.SurfaceTextu
             if( set_preview_size && (width != preview_w || height != preview_h) ) {
                 if( MyDebug.LOG )
                     Log.d(TAG, "updatePreviewTexture");
-                // Needed to fix problem if Open Camera is already running, and the aspect ratio changes (e.g.,
+                // Needed to fix problem if Lite Camera is already running, and the aspect ratio changes (e.g.,
                 // change of resolution, or switching between photo and video mode). When starting up in a "default",
                 // aspect ratio, the camera is opened via onSurfaceTextureAvailable(), and although we then call setAspectRatio(),
                 // there are no calls to onSurfaceTextureSizeChanged(). But when already running, or if
@@ -1148,7 +1148,7 @@ public class Preview implements SurfaceHolder.Callback, TextureView.SurfaceTextu
             }
             if( reopen ) {
                 if( MyDebug.LOG )
-                    Log.d(TAG, "onPostExecute, reopen camera");
+                    Log.d(TAG, "onPostExecute, reLite Camera");
                 openCamera();
             }
             if( MyDebug.LOG )
@@ -1333,7 +1333,7 @@ public class Preview implements SurfaceHolder.Callback, TextureView.SurfaceTextu
             return;
         }
         else if( camera_open_state == CameraOpenState.CAMERAOPENSTATE_CLOSING ) {
-            Log.d(TAG, "tried to open camera while camera is still closing in background thread");
+            Log.d(TAG, "tried to Lite Camera while camera is still closing in background thread");
             return;
         }
         // need to init everything now, in case we don't open the camera (but these may already be initialised from an earlier call - e.g., if we are now switching to another camera)
@@ -1419,7 +1419,7 @@ public class Preview implements SurfaceHolder.Callback, TextureView.SurfaceTextu
         }
         if( this.app_is_paused ) {
             if( MyDebug.LOG ) {
-                Log.d(TAG, "don't open camera as app is paused");
+                Log.d(TAG, "don't Lite Camera as app is paused");
             }
             return;
         }
@@ -1454,7 +1454,7 @@ public class Preview implements SurfaceHolder.Callback, TextureView.SurfaceTextu
 			// debug
 			if( debug_count_opencamera++ == 0 ) {
 				if( MyDebug.LOG )
-					Log.d(TAG, "debug: don't open camera yet");
+					Log.d(TAG, "debug: don't Lite Camera yet");
 				return;
 			}
 		}*/
@@ -1539,7 +1539,7 @@ public class Preview implements SurfaceHolder.Callback, TextureView.SurfaceTextu
         }
 
         if( MyDebug.LOG ) {
-            Log.d(TAG, "openCamera: total time to open camera: " + (System.currentTimeMillis() - debug_time));
+            Log.d(TAG, "openCamera: total time to Lite Camera: " + (System.currentTimeMillis() - debug_time));
         }
     }
 
@@ -1557,12 +1557,12 @@ public class Preview implements SurfaceHolder.Callback, TextureView.SurfaceTextu
         CameraController camera_controller_local;
         try {
             if( MyDebug.LOG ) {
-                Log.d(TAG, "try to open camera: " + cameraId);
+                Log.d(TAG, "try to Lite Camera: " + cameraId);
                 Log.d(TAG, "openCamera: time before opening camera: " + (System.currentTimeMillis() - debug_time));
             }
             if( test_fail_open_camera ) {
                 if( MyDebug.LOG )
-                    Log.d(TAG, "test failing to open camera");
+                    Log.d(TAG, "test failing to Lite Camera");
                 throw new CameraControllerException();
             }
             CameraController.ErrorCallback cameraErrorCallback = new CameraController.ErrorCallback() {
@@ -1598,7 +1598,7 @@ public class Preview implements SurfaceHolder.Callback, TextureView.SurfaceTextu
         }
         catch(CameraControllerException e) {
             if( MyDebug.LOG )
-                Log.e(TAG, "Failed to open camera: " + e.getMessage());
+                Log.e(TAG, "Failed to Lite Camera: " + e.getMessage());
             e.printStackTrace();
             camera_controller_local = null;
         }
@@ -1682,7 +1682,7 @@ public class Preview implements SurfaceHolder.Callback, TextureView.SurfaceTextu
             Log.d(TAG, "retryOpenCamera()");
         if( camera_controller == null ) {
             if( MyDebug.LOG )
-                Log.d(TAG, "try to reopen camera");
+                Log.d(TAG, "try to reLite Camera");
             this.openCamera();
         }
         else {
@@ -3532,7 +3532,7 @@ public class Preview implements SurfaceHolder.Callback, TextureView.SurfaceTextu
             Display display = activity.getWindowManager().getDefaultDisplay();
             display.getSize(display_size);
             // getSize() is adjusted based on the current rotation, so should already be landscape format, but:
-            // (a) it would be good to not assume Open Camera runs in landscape mode (if we ever ran in portrait mode,
+            // (a) it would be good to not assume Lite Camera runs in landscape mode (if we ever ran in portrait mode,
             // we'd still want display_size.x > display_size.y as preview resolutions also have width > height,
             // (b) on some devices (e.g., Nokia 8), when coming back from the Settings when device is held in Preview,
             // display size is returned in portrait format! (To reproduce, enable "Maximise preview size"; or if that's
@@ -4394,7 +4394,7 @@ public class Preview implements SurfaceHolder.Callback, TextureView.SurfaceTextu
                 // Although in theory we only need to stop and start preview, which should be faster, reopening the camera allows that to
                 // run on the background thread, thus not freezing the UI
                 // Also workaround for bug on Nexus 6 at least where switching to video and back to photo mode causes continuous picture mode to stop -
-                // at the least, we need to reopen camera when: ( !is_video && focus_value != null && focus_value.equals("focus_mode_continuous_picture") ).
+                // at the least, we need to reLite Camera when: ( !is_video && focus_value != null && focus_value.equals("focus_mode_continuous_picture") ).
                 // Lastly, note that it's important to still call setupCamera() when switching between photo and video modes (see comment for setupCamera()).
                 // So if we ever allow stopping/starting the preview again, we still need to call setupCamera() again.
                 this.reopenCamera();
@@ -7155,7 +7155,7 @@ public class Preview implements SurfaceHolder.Callback, TextureView.SurfaceTextu
 
         if( camera_open_state == CameraOpenState.CAMERAOPENSTATE_CLOSING ) {
             // when pausing, we close the camera on a background thread - so if this is still happening when we resume,
-            // we won't be able to open the camera, so need to open camera when it's closed
+            // we won't be able to open the camera, so need to Lite Camera when it's closed
             if( MyDebug.LOG )
                 Log.d(TAG, "camera still closing");
             if( close_camera_task != null ) { // just to be safe
@@ -7421,7 +7421,7 @@ public class Preview implements SurfaceHolder.Callback, TextureView.SurfaceTextu
 
     /** Displays a "toast", but has several advantages over calling Android's Toast API directly.
      *  We use a custom view, to rotate the toast to account for the device orientation (since
-     *  Open Camera always runs in landscape).
+     *  Lite Camera always runs in landscape).
      * @param clear_toast    Only relevant if use_fake_toast is false. If non-null, calls to this method
      *                       with the same clear_toast value will overwrite the previous ones rather than
      *                       being queued. Note that toasts no longer seem to be queued anyway on

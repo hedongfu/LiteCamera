@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Open Camera</string>
+    <string name="app_name">Lite Camera</string>
     <string name="action_settings">Ustawienia</string>
     <string name="action_popup">Ustawienia</string>
     <string name="intro_ok">OK (Ta wiadomość nie pokaże się ponownie)</string>
@@ -118,7 +118,7 @@
     <string name="preference_save_video_prefix_summary">Przedrostek używany w nazwach plików filmów</string>
     <string name="preference_save_zulu_time">Format czasu w nazwie pliku</string>
     <string name="preference_show_when_locked">Pokaż aparat gdy zablokowany</string>
-    <string name="preference_show_when_locked_summary">Jeśli włączone, Open Camera będzie widoczny ponad ekranem blokady (dostęp do opcji, galerii itp. wymaga odblokowania)</string>
+    <string name="preference_show_when_locked_summary">Jeśli włączone, Lite Camera będzie widoczny ponad ekranem blokady (dostęp do opcji, galerii itp. wymaga odblokowania)</string>
     <string name="preference_startup_focus">Automatyczne ustawianie ostrości podczas uruchamiania</string>
     <string name="preference_startup_focus_summary">Czy autofokus ma być uruchamiany podczas włączania aplikacji. Jeśli występuje problem z włączaniem lampy błyskowej podczas uruchamiania, wyłącz tę opcję</string>
     <string name="preference_lock_video">Blokowanie ekranu podczas nagrywania filmu</string>
@@ -163,7 +163,7 @@
     <string name="preference_take_photo_border">Pokazuj ramkę</string>
     <string name="preference_take_photo_border_summary">Wyświetla ramkę wokół ekranu po wykonaniu zdjęcia</string>
     <string name="preference_keep_display_on">Utrzymuj ekran włączony</string>
-    <string name="preference_keep_display_on_summary">Ekran nie wyłączy się jeśli główny ekran Open Camera jest aktywny</string>
+    <string name="preference_keep_display_on_summary">Ekran nie wyłączy się jeśli główny ekran Lite Camera jest aktywny</string>
     <string name="preference_max_brightness">Wymuś maksymalną jasność</string>
     <string name="preference_max_brightness_summary">Wymusza maksymalną jasność ekranu pomijając aktualne systemowe ustawienia</string>
     <string name="preference_category_camera_quality">Ustawienia zdjęć i filmów</string>
@@ -223,7 +223,7 @@
     <string name="preference_video_flash_summary">Jeśli włączone, lampa błyskowa będzie się włączać i wyłączać (przydatne w przypadku gdy chcemy z większej odległości stwierdzić czy aparat wciąż nagrywa)</string>
     <string name="preference_category_online">Różne</string>
     <string name="preference_online_help">Pomoc online</string>
-    <string name="preference_online_help_summary">Otwiera stronę Open Camera w przeglądarce internetowej</string>
+    <string name="preference_online_help_summary">Otwiera stronę Lite Camera w przeglądarce internetowej</string>
     <string name="preference_donate">Przekaż darowiznę</string>
     <string name="preference_donate_summary">Jeśli spodobała Ci się ta aplikacja rozważ przekazanie darowizny, która wesprze rozwój aplikacji. Możesz to zrobić poprzez zakup specjalnej aplikacji - dotknij tutaj aby otworzyć stronę. Dzięki!</string>
     <string name="preference_use_camera2">Używaj Camera2 API</string>
@@ -232,7 +232,7 @@
     <string name="preference_about_summary">Informacje o aplikacji i debugowanie</string>
     <string name="preference_reset">Reset ustawień</string>
     <string name="preference_reset_summary">Resetuje wszystkie ustawienia do domyślnych wartości</string>
-    <string name="preference_reset_question">Jeśteś pewien, że chcesz przywrócić wszystkie ustawienia Open Camera do wartości domyślnych?</string>
+    <string name="preference_reset_question">Jeśteś pewien, że chcesz przywrócić wszystkie ustawienia Lite Camera do wartości domyślnych?</string>
     <string name="about_available">Dostępne</string>
     <string name="about_not_available">Niedostępne</string>
     <string name="about_copy_to_clipboard">Kopiuj do schowka</string>
@@ -484,4 +484,6 @@
     <string name="preference_immersive_mode_navigation">Ukryj tylko przyciski nawigacyjne</string>
     <string name="preference_immersive_mode_gui">Ukryj graficzny interfejs</string>
     <string name="preference_immersive_mode_everything">Ukryj wszystko</string>
+
+    <string name="preference_gallery">Galeria</string>
 </resources>

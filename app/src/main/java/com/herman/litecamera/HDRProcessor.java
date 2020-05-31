@@ -792,7 +792,7 @@ public class HDRProcessor {
             // we'd risk having too large values).
             // If T=M, then this simplifies to C = 1-M.
             // I've tested that using "C = 1-M" always (and no linear scaling) also gives good results:
-            // much better compared to Open Camera 1.39, though not quite as good as doing both this
+            // much better compared to Lite Camera 1.39, though not quite as good as doing both this
             // and linear scaling (testHDR18, testHDR26, testHDR32 look too grey and/or bright).
             final float tonemap_denom = ((float)median_target)/(float)median_brightness - (255.0f / max_possible_value);
             if( MyDebug.LOG )
@@ -828,7 +828,7 @@ public class HDRProcessor {
             }
             case TONEMAPALGORITHM_REINHARD: {
                 // The basic algorithm is f(V) = V / (V+C), where V is the HDR value, C is tonemap_scale_c
-                // This was used until Open Camera 1.39, but has the problem of making images too dark: it
+                // This was used until Lite Camera 1.39, but has the problem of making images too dark: it
                 // maps [0, infinity] to [0, 1], but since in practice we never have very large V values, we
                 // won't use the full [0, 1] range. So we apply a linear scale S:
                 // f(V) = V.S / (V+C)

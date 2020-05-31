@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     
     <!--<PreferenceCategory
         android:key="preference_category_camera_effects"
@@ -1368,5 +1368,13 @@
         </PreferenceScreen>
 
         </PreferenceCategory>
-        
+
+        <Preference
+            android:title="@string/preference_gallery"
+            android:icon="@drawable/ic_thumb_up_white_48dp">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="@string/liteGalleryPlayStoreURL" />
+        </Preference>
+
 </PreferenceScreen>

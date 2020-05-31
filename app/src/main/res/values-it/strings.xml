@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Open Camera</string>
+    <string name="app_name">Lite Camera</string>
     <string name="action_settings">Impostazioni</string>
     <string name="action_popup">Impostazioni Popup</string>
     <string name="intro_ok">OK (Non mostrare più)</string>
@@ -118,7 +118,7 @@
     <string name="preference_save_video_prefix_summary">Prefisso da usare per il filename di salvataggio dei video</string>
     <string name="preference_save_zulu_time">Formato TEMPO da utilizzare nel filename</string>
     <string name="preference_show_when_locked">Mostra la fotocamera quando dispositivo bloccato</string>
-    <string name="preference_show_when_locked_summary">Se abilitato, Open Camera sarà mostrata sopra il blocco schermo (dovrai comunque sbloccarlo per avere accesso alle Impostazioni, Galleria, ecc.)</string>
+    <string name="preference_show_when_locked_summary">Se abilitato, Lite Camera sarà mostrata sopra il blocco schermo (dovrai comunque sbloccarlo per avere accesso alle Impostazioni, Galleria, ecc.)</string>
     <string name="preference_lock_video">Blocco schermo nella registrazione video</string>
     <string name="preference_lock_video_summary">Quando si registra un video l\'interfaccia sarà bloccata per prevenire accidentali interruzioni. Trascina il dito sullo schermo per sbloccare. Nota che la registrazione del video sarà interrotta se l\'app andrà in background o se lo schermo è oscurato.</string>
     <string name="preference_rotate_preview">Ruota anteprima</string>
@@ -156,7 +156,7 @@
     <string name="preference_take_photo_border">visualizza bordo quando si scatta foto</string>
     <string name="preference_take_photo_border_summary">Visualizza bordo sul display per indicare che si sta scattando una foto</string>
     <string name="preference_keep_display_on">Mantieni display attivo</string>
-    <string name="preference_keep_display_on_summary">Se abilitato, il display non viene spento fintantoché l\'interfaccia principale di Open Camera è attiva</string>
+    <string name="preference_keep_display_on_summary">Se abilitato, il display non viene spento fintantoché l\'interfaccia principale di Lite Camera è attiva</string>
     <string name="preference_thumbnail_animation">Mostra animazione miniatura</string>
     <string name="preference_thumbnail_animation_summary">Mostra una miniatura in movimento in animazione quando si scatta una fotografia</string>
     <string name="preference_max_brightness">Forza luminosità massima</string>
@@ -219,7 +219,7 @@
     
     <string name="preference_category_online">Varie</string>
     <string name="preference_online_help">Aiuto Online</string>
-    <string name="preference_online_help_summary">Apre il sito web di Open Camera nel browser</string>
+    <string name="preference_online_help_summary">Apre il sito web di Lite Camera nel browser</string>
     <string name="preference_donate">Dona per supportare lo sviluppo</string>
     <string name="preference_donate_summary">Se questa applicazione ti piace, puoi sempre pensare di fare una donazione. Puoi farlo premendo sul relativo bottone - cliccando su quel tasto aprirai la pagina per la donazione. Grazie mille!</string>
     <string name="preference_use_camera2">Usa le API Camera2</string>
@@ -227,8 +227,8 @@
     <string name="preference_about">Informazioni</string>
     <string name="preference_about_summary">App e informazioni di debug</string>
     <string name="preference_reset">Reset settings</string>
-    <string name="preference_reset_summary">Reset di tutte le impostazioni di Open Camera ai valori predefiniti</string>
-    <string name="preference_reset_question">Sei sicuro di voler resettare tutte le impostazioni di Open Camera ai valori predefiniti?</string>
+    <string name="preference_reset_summary">Reset di tutte le impostazioni di Lite Camera ai valori predefiniti</string>
+    <string name="preference_reset_question">Sei sicuro di voler resettare tutte le impostazioni di Lite Camera ai valori predefiniti?</string>
     <string name="about_available">Disponibile</string>
     <string name="about_not_available">Non disponibile</string>
     <string name="about_copy_to_clipboard">Copia nella clipboard</string>
@@ -536,4 +536,6 @@
     <string name="preference_immersive_mode_navigation">Nascondi solamente i bottoni di navigazione virtuali on-screen</string>
     <string name="preference_immersive_mode_gui">Nascondi GUI</string>
     <string name="preference_immersive_mode_everything">Nascondi tutto</string>
+
+    <string name="preference_gallery">Galleria</string>
 </resources>

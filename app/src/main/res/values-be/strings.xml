@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Open Camera</string>
+    <string name="app_name">Lite Camera</string>
     <string name="action_settings">Налады</string>
     <string name="action_popup">Налады ўсплываючых</string>
     <string name="intro_ok">Добра (Гэта паведамленне не будзе паказана зноў)</string>
@@ -368,4 +368,6 @@
     <string name="preference_immersive_mode_navigation">Хаваць віртуальныя кнопкі навігацыі на экране</string>
     <string name="preference_immersive_mode_gui">Хаваць GUI</string>
     <string name="preference_immersive_mode_everything">Хаваць усе</string>
+
+    <string name="preference_gallery">Галерэя</string>
 </resources>

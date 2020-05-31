@@ -119,7 +119,7 @@ public class DeviceScanner extends ListActivity {
     private void askForLocationPermission() {
         if( MyDebug.LOG )
             Log.d(TAG, "askForLocationPermission");
-        // n.b., we only need ACCESS_COARSE_LOCATION, but it's simpler to request both to be consistent with Open Camera's
+        // n.b., we only need ACCESS_COARSE_LOCATION, but it's simpler to request both to be consistent with Lite Camera's
         // location permission requests in PermissionHandler. If we only request ACCESS_COARSE_LOCATION here, and later the
         // user enables something that needs ACCESS_FINE_LOCATION, Android ends up showing the "rationale" dialog - and once
         // that's dismissed, the permission seems to be granted without showing the permission request dialog (so it works,
